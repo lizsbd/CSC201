@@ -160,11 +160,11 @@ public class Employee {
 		double income = this.income();
 		if((income>=0)&&(income<30000))
 		{
-			stateTax = 0.05*income/52;
+			stateTax = 0.05*this.grossWage;
 		}
 		else if (income>30000)
 		{
-			stateTax = 0.1*income/52;
+			stateTax = 0.1*this.grossWage;
 		}
 		else 
 		{
@@ -196,7 +196,7 @@ public class Employee {
 	{
 		if(this.hour > 40)
 		{
-		 this.grossWage = (40 + (this.hour-40)/2)*this.rate;
+		 this.grossWage = (this.hour + (this.hour-40)/2)*this.rate;
 		
 		}
 		else
